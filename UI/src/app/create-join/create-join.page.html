@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text="back"></ion-back-button>
+      </ion-buttons>
+      <ion-title>create or join a team</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-grid class="vertical-align-content">
+      <ion-row>
+          <ion-col>
+            <ion-button expand="block" size="large" routerLink="/create-team" (click)="create()">Create Team</ion-button>
+            <ion-button expand="block" size="small" color="tertiary" routerLink="/join-team" (click)="join()">Join TeamChat</ion-button>
+            <ion-row>
+              <ion-col>
+                <div style="text-align:center">
+                  <a color="light" style="text-align: center" href="#" (click)="skip()">Skip for now</a>
+                </div>              
+              </ion-col>
+            </ion-row>
+          </ion-col>
+      </ion-row>    
+    </ion-grid>
+    
+  </ion-content>  
+</ion-app>

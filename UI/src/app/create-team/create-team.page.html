@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>create-team</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="vertical-align-content">
+    <ion-row>
+      <ion-col>
+        <ion-item id="input-container">
+          <ion-label position="floating">Team Name <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input id="input" [(ngModel)]="teamName"></ion-input>
+          <ion-icon name="people" slot="end" id="input_img"></ion-icon>
+        </ion-item>
+      
+        <ion-row>
+          <ion-col width-50 style="text-align: center">
+            <ion-button routerLink="/tabs/tabs" (click)="createTeam()">Create</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>      
+  </ion-grid>    
+  
+</ion-content>

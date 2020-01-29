@@ -1,0 +1,95 @@
+<ion-menu side="start" menuId="first">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Bubble
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-list>
+    <div *ngFor="let message of messages">
+      <ion-row *ngIf="message.user !== currentUser">
+        <ion-col class="right" no-padding>
+          <div class="imageAvatarRight">
+            <ion-label color="light">
+              <div class="message chatDiv">
+                <small style="color: gray;">{{ message.user }}</small>
+                <p style="color: black;">{{message.msg}}</p>
+                <ion-text>
+                  <div class="time" text-right>{{ message.createdAt | date:'shortTime' }}</div>
+                </ion-text>
+              </div>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="message.user === currentUser">
+        <ion-col class="left" no-padding>
+          <div class="imageAvatarLeft">
+            <ion-label color="light">
+              <div class="message chatDiv">
+                <p style="color: black;">{{message.msg}}</p>
+                <ion-text>
+                  <div class="time" text-right>{{ message.createdAt | date:'shortTime' }}</div>
+                </ion-text>
+              </div>
+            </ion-label>
+            <!-- 
+            <div class="imageAvatarBottom">
+              <ion-icon class="imageAvatarBottomIcon" name="add" expand="icon-only" color="success"></ion-icon> 
+              <ion-avatar class="avatar">
+                <div class="imageAvatarBottomIcon">
+                  <ion-icon name="add" expand="icon-only" color="light"> </ion-icon>
+                </div>
+                <ion-img src="../../assets/chat/chat5.jpg"></ion-img>
+              </ion-avatar>              
+            </div>
+            -->
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button fill="clear" (click)="sendMessage()" [disabled]="message === ''">
+      <ion-icon name="ios-send" expand="icon-only"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row align-items-center>
+      <ion-col>
+        <ion-textarea class="input-box" placeholder="Enter a message" auto-grow class="message-input" rows="1" [(ngModel)]="message"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+ 
+</ion-footer>

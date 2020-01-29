@@ -1,0 +1,39 @@
+.ion-activatable {
+    position: relative;
+    overflow: hidden;
+  }
+
+.vertical-align-content > *
+{
+  display: flex!important;
+  align-content: center!important;
+  align-items: center!important;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*This CSS has been tweaked from root site to match with material-ui*/
+form > div > div > div {
+  padding: 0px;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+#inner {
+  display: table;
+  margin: 0 auto;
+}
+
+a {
+    color: rgb(132, 132, 139);
+}
+p, a span {
+    color: rgb(79, 79, 82);
+}
